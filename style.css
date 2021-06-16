@@ -8,6 +8,14 @@
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -26,7 +34,23 @@ header {
     padding: 2em 0;
 }
 
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#headline {
+    display: flex;
+    justify-content: center;
+}
 
 p {
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: center;
+}
+
+hr {
     margin: 1em 0;
 }
