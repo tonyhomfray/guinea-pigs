@@ -56,6 +56,15 @@ $age_total_days = $interval_from_birth->days;
 
     <div id="main-container">
         <div id="main-content">
+            <h2 id="headline">Maisy and Coco are <?php 
+                if($age_years > 0) {
+                    echo $age_years . "years, ";
+                }
+                if($age_months > 0)  {
+                    echo $age_months . "months, ";
+                }
+                echo $age_days; ?>days old!</h2>
+            <hr>
             <p>Maisy and Coco were bought on <?php echo $piggies_bought; ?>.</p>
             <p>Today is <?php echo $today; ?>.</p>
             <hr>
