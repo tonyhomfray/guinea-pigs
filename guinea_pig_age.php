@@ -1,21 +1,5 @@
 <?php
 
-// $piggies_bought_raw = date_create_from_format('j-M-Y', '3-Apr-2021');
-// $piggies_bought = date_format($piggies_bought_raw, 'l jS F Y');
-
-// echo "Maisy and Coco were bought on {$piggies_bought}.<br/><br/>";
-
-// $today_raw = date_create();
-// $today = date_format($today_raw, 'D jS F Y');
-
-// echo "Today is {$today}.<br/><br/>";
-
-// $interval = date_diff($piggies_bought_raw, $today_raw);
-// $days_owned = $interval->days;
-// echo "We have owned Maisy and Coco for {$days_owned} days!<br/><br/>";
-
-
-
 $piggies_bought_raw = DateTime::createFromFormat('j-M-Y', '3-Apr-2021');
 $piggies_bought = $piggies_bought_raw->format('l jS F Y');
 
@@ -49,6 +33,9 @@ $age_total_days = $interval_from_birth->days;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lorinda+Shadow">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredericka+the+Great">
     <title>Guinea Pigs</title>
 </head>
 <body>
@@ -58,21 +45,34 @@ $age_total_days = $interval_from_birth->days;
         <div id="main-content">
             <h2 id="headline">Maisy and Coco are <?php 
                 if($age_years > 0) {
-                    echo $age_years . "years, ";
+                    echo $age_years . " years, ";
                 }
                 if($age_months > 0)  {
-                    echo $age_months . "months, ";
+                    echo $age_months . " months, ";
                 }
-                echo $age_days; ?>days old!</h2>
+                echo $age_days; ?> days old!</h2>
             <hr>
             <p>Maisy and Coco were bought on <?php echo $piggies_bought; ?>.</p>
             <p>Today is <?php echo $today; ?>.</p>
             <hr>
             <p>We have owned Maisy and Coco for <?php echo $total_days_owned; ?> days!</p>
-            <p>We have owned Maisy and Coco for <?php echo $years_owned; ?> years, <?php echo $months_owned; ?> months and <?php echo $days_owned; ?> days!</p>
+            <p>We have owned Maisy and Coco for <?php 
+                if($years_owned > 0) {
+                    echo $years_owned . " years, ";
+                }
+                if($months_owned > 0)  {
+                    echo $months_owned . " months, ";
+                }
+                echo $days_owned; ?> days!</p>
             <hr>
             <p>We assume Maisy and Coco are <?php echo $age_total_days; ?> days old!</p>
-            <p>We assume Maisy and Coco are <?php echo $age_years; ?> years, <?php echo $age_months; ?> months and <?php echo $age_days; ?> days old!</p>
+            <p>Maisy and Coco are therefore <?php if($age_years > 0) {
+                    echo $age_years . " years, ";
+                }
+                if($age_months > 0)  {
+                    echo $age_months . " months, ";
+                }
+                echo $age_days; ?> days old!</p>
         </div> <!-- #main content -->
     </div> <!-- #main-content --->
 
