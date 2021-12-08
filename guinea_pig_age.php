@@ -4,7 +4,10 @@ $piggies_bought_raw = DateTime::createFromFormat('j-M-Y', '3-Apr-2021');
 $piggies_bought = $piggies_bought_raw->format('l jS F Y');
 
 $today_raw = new DateTime();
+// $today_raw = new DateTime('today');    // Use this version to pretend their birthday is today
 $today = $today_raw->format('l jS F Y');
+$this_year = $today_raw->format('Y');
+$next_year = $this_year +1;
 
 $interval_from_purchase = $piggies_bought_raw->diff($today_raw);
 $years_owned = $interval_from_purchase->y;
@@ -22,6 +25,21 @@ $age_months = $interval_from_birth->m;
 $age_days = $interval_from_birth->d;
 
 $age_total_days = $interval_from_birth->days;
+
+
+$this_years_birthday_raw = new DateTime($this_year . '-04-03');
+// $this_years_birthday_raw = new DateTime('today');    // Use this version to pretend their birthday is today
+$is_birthday = false;
+
+if($this_years_birthday_raw < $today_raw) {
+    $next_birthday_raw = new DateTime($next_year . '-04-03');
+} else if($this_years_birthday_raw > $today_raw) {
+    $next_birthday_raw = $this_years_birthday_raw;
+} else {
+    $next_birthday_raw = $today_raw;
+    $is_birthday = true;
+}
+$next_birthday = $next_birthday_raw->format('l jS F Y');
 
 ?>
 
@@ -73,6 +91,16 @@ $age_total_days = $interval_from_birth->days;
                     echo $age_months . " months, ";
                 }
                 echo $age_days; ?> days old!</p>
+
+            <hr>
+            <p>Their next birthday is <?php 
+                if($is_birthday) {
+                    echo "TODAY!!" . "<br>";
+                    echo "Happy Birthday Maisy and Coco!!";
+                } else {
+                    echo $next_birthday;
+                }
+            ?></p>
         </div> <!-- #main content -->
     </div> <!-- #main-content --->
 
