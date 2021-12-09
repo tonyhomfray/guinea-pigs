@@ -3,6 +3,9 @@
 $piggies_bought_raw = DateTime::createFromFormat('j-M-Y', '3-Apr-2021');
 $piggies_bought = $piggies_bought_raw->format('l jS F Y');
 
+$piggies_born_raw = DateTime::createFromFormat('j-M-Y', '20-Feb-2021');
+$piggies_born = $piggies_born_raw->format('l jS F Y');
+
 $today_raw = new DateTime();
 // $today_raw = new DateTime('today');    // Use this version to pretend their birthday is today
 $today = $today_raw->format('l jS F Y');
@@ -27,12 +30,12 @@ $age_days = $interval_from_birth->d;
 $age_total_days = $interval_from_birth->days;
 
 
-$this_years_birthday_raw = new DateTime($this_year . '-04-03');
+$this_years_birthday_raw = new DateTime($this_year . '-02-20');
 // $this_years_birthday_raw = new DateTime('today');    // Use this version to pretend their birthday is today
 $is_birthday = false;
 
 if($this_years_birthday_raw < $today_raw) {
-    $next_birthday_raw = new DateTime($next_year . '-04-03');
+    $next_birthday_raw = new DateTime($next_year . '-02-20');
 } else if($this_years_birthday_raw > $today_raw) {
     $next_birthday_raw = $this_years_birthday_raw;
 } else {
@@ -71,6 +74,7 @@ $next_birthday = $next_birthday_raw->format('l jS F Y');
                 echo $age_days; ?> days old!</h2>
             <hr>
             <p>Maisy and Coco were bought on <?php echo $piggies_bought; ?>.</p>
+            <p>We assume they were born on <?php echo $piggies_born; ?>.</p>
             <p>Today is <?php echo $today; ?>.</p>
             <hr>
             <p>We have owned Maisy and Coco for <?php echo $total_days_owned; ?> days!</p>
