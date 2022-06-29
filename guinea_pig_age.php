@@ -1,33 +1,33 @@
 <?php
 
-$piggies_bought_raw = DateTime::createFromFormat('j-M-Y', '3-Apr-2021');
-$piggies_bought = $piggies_bought_raw->format('l jS F Y');
+// $piggies_bought_raw = DateTime::createFromFormat('j-M-Y', '3-Apr-2021');
+// $piggies_bought = $piggies_bought_raw->format('l jS F Y');
 
-$piggies_born_raw = DateTime::createFromFormat('j-M-Y', '20-Feb-2021');
-$piggies_born = $piggies_born_raw->format('l jS F Y');
+// $piggies_born_raw = DateTime::createFromFormat('j-M-Y', '20-Feb-2021');
+// $piggies_born = $piggies_born_raw->format('l jS F Y');
 
-$today_raw = new DateTime();
-// $today_raw = new DateTime('today');    // Use this version to pretend their birthday is today
-$today = $today_raw->format('l jS F Y');
-$this_year = $today_raw->format('Y');
-$next_year = $this_year +1;
+// $today_raw = new DateTime();
+// // $today_raw = new DateTime('today');    // Use this version to pretend their birthday is today
+// $today = $today_raw->format('l jS F Y');
+// $this_year = $today_raw->format('Y');
+// $next_year = $this_year +1;
 
-$interval_from_purchase = $piggies_bought_raw->diff($today_raw);
-$years_owned = $interval_from_purchase->y;
-$months_owned = $interval_from_purchase->m;
-$days_owned = $interval_from_purchase->d;
-$total_days_owned = $interval_from_purchase->days;
+// $interval_from_purchase = $piggies_bought_raw->diff($today_raw);
+// $years_owned = $interval_from_purchase->y;
+// $months_owned = $interval_from_purchase->m;
+// $days_owned = $interval_from_purchase->d;
+// $total_days_owned = $interval_from_purchase->days;
 
 
-// We were told they were 6 weeks old. 6 * 7 = 42 days
-$age_when_bought = new DateInterval('P42D');
-$assumed_age = $piggies_bought_raw->sub($age_when_bought);
-$interval_from_birth = $assumed_age->diff($today_raw);
-$age_years = $interval_from_birth->y;
-$age_months = $interval_from_birth->m;
-$age_days = $interval_from_birth->d;
+// // We were told they were 6 weeks old. 6 * 7 = 42 days
+// $age_when_bought = new DateInterval('P42D');
+// $assumed_age = $piggies_bought_raw->sub($age_when_bought);
+// $interval_from_birth = $assumed_age->diff($today_raw);
+// $age_years = $interval_from_birth->y;
+// $age_months = $interval_from_birth->m;
+// $age_days = $interval_from_birth->d;
 
-$age_total_days = $interval_from_birth->days;
+// $age_total_days = $interval_from_birth->days;
 
 
 $this_years_birthday_raw = new DateTime($this_year . '-02-20');
