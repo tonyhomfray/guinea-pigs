@@ -5,7 +5,7 @@ require('./includes/init.php');
 class GuineaPig
 {
     private $today_raw;
-    public $today; // THIS
+    private $today; // THIS
     private $this_year;
     private $next_year;
 
@@ -13,7 +13,7 @@ class GuineaPig
     public $years_owned; // THIS
     public $months_owned; // THIS
     public $days_owned; // THIS
-    public $total_days_owned; // THIS
+    // public $total_days_owned; // THIS
 
     public $age_when_bought; // THIS
     private $assumed_age_when_bought;
@@ -22,7 +22,7 @@ class GuineaPig
     public $age_months; // THIS
     public $age_days; // THIS
 
-    public $age_total_days; // THIS
+    // public $age_total_days; // THIS
 
 
     private $this_years_birthday_raw;
@@ -68,6 +68,14 @@ class GuineaPig
             $this->is_birthday = true;
         }
         $this->next_birthday = $this->next_birthday_raw->format('l jS F Y');
+    }
+
+
+    // GETTERS
+    
+    public function getToday()
+    {
+        return $this->today;
     }
 
 }
