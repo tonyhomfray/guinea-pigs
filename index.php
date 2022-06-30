@@ -1,6 +1,8 @@
 <?php 
 require('./classes/guineapig.class.php');
 $gp = new GuineaPig();
+$stop = $gp->age();
+$boom;
 ?>
 
 
@@ -22,17 +24,17 @@ $gp = new GuineaPig();
     <div id="main-container">
         <div id="main-content">
             <h2 id="headline">Maisy and Coco are 
-            <?php if($gp->age_years > 0) {
-                    echo $gp->age_years;
-                    echo $gp->age_years > 1 ? " years, " : " year, ";
+            <?php if($gp->age()["years"] > 0) {
+                    echo $gp->age()["years"];
+                    echo $gp->age()["years"] > 1 ? " years, " : " year, ";
                 }
-                if($gp->age_months > 0)  {
-                    echo $gp->age_months;
-                    echo $gp->age_months > 1 ? " months, " : " month, ";
+                if($gp->age()["months"] > 0)  {
+                    echo $gp->age()["months"];
+                    echo $gp->age()["months"] > 1 ? " months, " : " month, ";
                 }
-                if($gp->age_days > 0)  {
-                    echo $gp->age_days;
-                    echo $gp->age_days > 1 ? " days old." : " day old.";
+                if($gp->age()["days"] > 0)  {
+                    echo $gp->age()["days"];
+                    echo $gp->age()["days"] > 1 ? " days old." : " day old.";
                 }
                 ?></h2>
             <hr>
@@ -42,17 +44,17 @@ $gp = new GuineaPig();
             <hr>
             <!-- <p>We assume Maisy and Coco are <?php echo $gp->age_total_days; ?> days old!</p> -->
             <p>Maisy and Coco are therefore 
-                <?php if($gp->age_years > 0) {
-                    echo $gp->age_years;
-                    echo $gp->age_years > 1 ? " years, " : " year, ";
+                <?php if($gp->age()["years"] > 0) {
+                    echo $gp->age()["years"];
+                    echo $gp->age()["years"] > 1 ? " years, " : " year, ";
                 }
-                if($gp->age_months > 0)  {
-                    echo $gp->age_months;
-                    echo $gp->age_months > 1 ? " months, " : " month, ";
+                if($gp->age()["months"] > 0)  {
+                    echo $gp->age()["months"];
+                    echo $gp->age()["months"] > 1 ? " months, " : " month, ";
                 }
-                if($gp->age_days > 0)  {
-                    echo $gp->age_days;
-                    echo $gp->age_days > 1 ? " days old." : " day old.";
+                if($gp->age()["days"] > 0)  {
+                    echo $gp->age()["days"];
+                    echo $gp->age()["days"] > 1 ? " days old." : " day old.";
                 }
                 ?>
             </p>
@@ -60,17 +62,17 @@ $gp = new GuineaPig();
             <!-- <p>We have owned Maisy and Coco for <?php echo $gp->total_days_owned; ?> days!</p> -->
             <p>We have owned Maisy and Coco for 
                 <?php 
-                if($gp->years_owned > 0) {
-                    echo $gp->years_owned;
-                    echo $gp->years_owned > 1 ? " years, " : " year, ";
+                if($gp->timeOwned()["years"] > 0) {
+                    echo $gp->timeOwned()["years"];
+                    echo $gp->timeOwned()["years"] > 1 ? " years, " : " year, ";
                 }
-                if($gp->months_owned > 0)  {
-                    echo $gp->months_owned;
-                    echo $gp->months_owned ? " months, " : " month, ";
+                if($gp->timeOwned()["months"] > 0)  {
+                    echo $gp->timeOwned()["months"];
+                    echo $gp->timeOwned()["months"] ? " months, " : " month, ";
                 }
-                if($gp->days_owned > 0)  {
-                    echo $gp->days_owned;
-                    echo $gp->days_owned > 1 ? " days." : " day.";
+                if($gp->timeOwned()["days"] > 0)  {
+                    echo $gp->timeOwned()["days"];
+                    echo $gp->timeOwned()["days"] > 1 ? " days." : " day.";
                 }
                 ?>
             </p>

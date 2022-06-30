@@ -10,17 +10,17 @@ class GuineaPig
     private $next_year;
 
     private $interval_from_purchase;
-    public $years_owned; // THIS
-    public $months_owned; // THIS
-    public $days_owned; // THIS
+    private $years_owned; // THIS
+    private $months_owned; // THIS
+    private $days_owned; // THIS
     // public $total_days_owned; // THIS
 
     public $age_when_bought; // THIS
     private $assumed_age_when_bought;
     public $interval_from_birth;
-    public $age_years; // THIS
-    public $age_months; // THIS
-    public $age_days; // THIS
+    private $age_years; // THIS
+    private $age_months; // THIS
+    private $age_days; // THIS
 
     // public $age_total_days; // THIS
 
@@ -76,6 +76,24 @@ class GuineaPig
     public function getToday()
     {
         return $this->today;
+    }
+
+    public function timeOwned()
+    {
+        return [
+            "years" => $this->years_owned,
+            "months" => $this->months_owned,
+            "days" => $this->days_owned
+        ];
+    }
+
+    public function age()
+    {
+        return [
+            "years" => $this->age_years,
+            "months" => $this->age_months,
+            "days" => $this->age_days
+        ];
     }
 
 }
